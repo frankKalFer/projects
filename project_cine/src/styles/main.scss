@@ -1,0 +1,114 @@
+@use 'variaveis';
+@use 'hero';
+@use 'header';
+@use 'sobre';
+@use 'footer';
+
+@font-face {
+    font-family: Perfect Futures;
+    src: url(/assets/fonts/Perfect\ Futures.otf);
+    font-weight: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    background-color: variaveis.$corDeFundo;
+    font-family: Perfect Futures, sans-serif;
+
+}
+
+@mixin text($fontSize: 5px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 13px;
+    color: variaveis.$corTextoPrincipal;
+}
+
+@mixin title($fontSize: 60px) {
+    @include text($fontSize);
+    color: variaveis.$corTextoSecundario;
+}
+
+.text--big {
+    @include text(18px);
+}
+
+.text {
+    @include text(8px);
+}
+
+.text--small {
+    @include text(12px);
+
+    @media (max-width: 768px) {
+        @include text(8px);
+    }
+}
+
+.title--big {
+    @include title(40px);
+}
+
+.title {
+    @include title;
+}
+
+.title--small {
+    @include title(28px);
+}
+
+.button {
+    display: block;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 12px 8px;
+    font-size: 14px;
+    color: variaveis.$corTextoButton;
+    background-color: variaveis.$corDeFundoBotaoPrimario;
+    text-transform: uppercase;
+    border: 2px solid variaveis.$corDeFundoBotaoPrimario;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 1px;
+
+    @media (max-width: 768px) {
+        font-size: 6px;
+        padding: 8px 8px;
+    }
+
+    &:hover {
+        background-color: lighten(variaveis.$corDeFundoBotaoPrimario, 4%);
+    }
+
+    &--secondary {
+        background-color: variaveis.$corDeFundoBotaoSecundario;
+        border-color: variaveis.$corDeFundoBotaoSecundario;
+
+        &:hover {
+            background-color: lighten(variaveis.$corDeFundoBotaoSecundario, 3%);
+        }
+    }
+
+    &--dark {
+        background-color: rgba(variaveis.$corDeFundoBotaoDark, 0.8);
+        border-color: variaveis.$corTextoSecundario;
+
+        &:hover {
+            background-color: rgba(variaveis.$corTextoSecundario, 0.9);
+            color: variaveis.$corDeFundoBotaoPrimario;
+        }
+    }
+}
+
+.link-text {
+    @include text(18px);
+    color: variaveis.$corTextoSecundario;
+    text-decoration: underline;
+    text-decoration: none;
+}

@@ -1,0 +1,46 @@
+.sobre {
+    padding: 5.6vw;
+    margin-top: 5vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    @media (max-width: 768px) {
+        margin-top: 15vw;
+        padding: 5.0vw;
+        grid-template-columns: 1fr;
+    }
+
+    img {
+        max-width: 100%;
+        height: 100%;
+    }
+
+    &__text_container {
+        padding: 0 3vw;
+        height: 100%;
+
+
+        @media (max-width:768px) {
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+
+            @media (max-width: 768px) {
+                font-size: 22px;
+                text-align: start;
+            }
+        }
+
+        p {
+            font-size: 18px;
+
+            @media (max-width:768px) {
+                font-size: 13px;
+                text-align: start;
+            }
+        }
+    }
+}
