@@ -58,7 +58,7 @@ const cadastrarTarefa = () => {
 
 <template>
     <div class="container">
-        <Header  />
+        <Header />
         <Form />
         <List />
     </div>
